@@ -43,10 +43,19 @@
                     </ul>
                 </li>
 
+                <!-- Categorías -->
                 <li class="nav-item">
                     <a href="<?= base_url('categorias') ?>" class="nav-link <?= url_is('categorias*') ? 'active' : '' ?>">
                         <i class="nav-icon bi bi-tags"></i>
                         <p>Categorías</p>
+                    </a>
+                </li>
+
+                <!-- Marcas -->
+                <li class="nav-item">
+                    <a href="<?= base_url('marcas') ?>" class="nav-link <?= url_is('marcas*') ? 'active' : '' ?>">
+                        <i class="nav-icon bi bi-bookmark"></i>
+                        <p>Marcas</p>
                     </a>
                 </li>
 

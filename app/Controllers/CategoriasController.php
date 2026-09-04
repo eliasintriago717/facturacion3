@@ -68,8 +68,12 @@ class CategoriasController extends BaseController
         ]);
     }
 
-    public function obtener($id)
+    public function obtener($id = null)
     {
+        if (!$this->request->isAJAX()) {
+            return $this->response->setStatusCode(404);
+        }
+
         $categoria = $this->categoriaModel->find($id);
         if (!$categoria) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Categoría no encontrada.']);
@@ -77,7 +81,7 @@ class CategoriasController extends BaseController
         return $this->response->setJSON(['status' => 'success', 'data' => $categoria]);
     }
 
-    public function eliminar($id)
+    public function eliminar($id = null)
     {
         if (!$this->request->isAJAX()) {
             return $this->response->setStatusCode(404);
